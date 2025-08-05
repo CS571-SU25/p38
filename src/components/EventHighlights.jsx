@@ -1,6 +1,5 @@
 import React from 'react';
-
-// Test images
+import { Carousel, Container } from 'react-bootstrap';
 import photo1 from '../assets/photo1.jpg';
 import photo2 from '../assets/photo2.jpg';
 import photo3 from '../assets/photo3.jpg';
@@ -13,16 +12,39 @@ export default function EventHighlights() {
   ];
 
   return (
-    <section>
+    <Container className="my-4">
       <h2>Event Highlights</h2>
-      <div style={{ display: 'flex', gap: '20px' }}>
+      <Carousel>
         {highlights.map(({ id, img, caption }) => (
-          <div key={id} style={{ maxWidth: '200px' }}>
-            <img src={img} alt={caption} style={{ width: '100%', borderRadius: '8px' }} />
-            <p>{caption}</p>
-          </div>
+          <Carousel.Item key={id}>
+            <img
+              className="d-block w-100"
+              src={img}
+              alt={caption}
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '350px',
+                objectFit: 'contain',
+                borderRadius: '8px',
+              }}
+            />
+            <div
+              style={{
+                marginTop: '0.5rem',
+                color: '#333',
+                fontWeight: '500',
+                fontSize: '1rem',
+                textAlign: 'center',
+              }}
+            >
+              {caption}
+            </div>
+          </Carousel.Item>
+
+
         ))}
-      </div>
-    </section>
+      </Carousel>
+    </Container>
   );
 }

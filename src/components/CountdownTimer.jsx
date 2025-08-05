@@ -19,6 +19,7 @@ export default function Countdown() {
 
   return (
     <div>
+      <h2>.</h2>
       <h3>Countdown to Run for Hope:</h3>
       <p>{timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s</p>
     </div>
