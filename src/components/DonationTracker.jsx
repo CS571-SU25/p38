@@ -4,7 +4,6 @@ import { Container, Card, ProgressBar, Button, Modal, Form, Alert } from 'react-
 export default function DonationTracker() {
   const goal = 5000;
 
-  // Initialize total from localStorage or fallback to 3542
   const [total, setTotal] = useState(() => {
     const saved = localStorage.getItem('donationTotal');
     return saved ? parseFloat(saved) : 3542;
@@ -16,7 +15,6 @@ export default function DonationTracker() {
   const [cardNumber, setCardNumber] = useState('');
   const [error, setError] = useState('');
 
-  // Save total to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('donationTotal', total.toString());
   }, [total]);

@@ -6,7 +6,7 @@ import { UserContext } from './UserContext';
 
 export default function Header() {
   const [darkMode, setDarkMode] = useState(false);
-  const { userRole } = useContext(UserContext); // 👈 get role from context
+  const { userRole } = useContext(UserContext); 
 
   function toggleTheme() {
     setDarkMode(!darkMode);
@@ -39,7 +39,6 @@ export default function Header() {
         </Container>
       </Navbar>
 
-      {/* Countdown Timer Fixed Top */}
       <div
         style={{
           position: 'fixed',

@@ -63,7 +63,6 @@ export default function CommunityBoard() {
 
   const roomComments = comments[activeRoom] || [];
 
-  // Handle username modal submit
   function handleNameSubmit(e) {
     e.preventDefault();
     if (username.trim()) {
@@ -79,7 +78,6 @@ export default function CommunityBoard() {
     >
       <h1 className="mb-4 text-center text-primary">Community Board</h1>
 
-      {/* Username prompt modal */}
       <Modal show={showNameModal} backdrop="static" keyboard={false} centered>
         <Modal.Header>
           <Modal.Title>Welcome!</Modal.Title>
